@@ -23,6 +23,17 @@ public class CadastroCliente {
 	private String cpf;
 
 	@Column(nullable = false)
+	private String endereco;
+	
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	@Column(nullable = false)
 	private String email;
 
 	@Column(nullable = false)
