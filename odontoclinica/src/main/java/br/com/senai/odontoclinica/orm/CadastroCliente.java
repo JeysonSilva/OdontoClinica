@@ -1,5 +1,6 @@
 package br.com.senai.odontoclinica.orm;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 
@@ -23,8 +26,12 @@ public class CadastroCliente {
 	private String cpf;
 
 	@Column(nullable = false)
+	@DateTimeFormat(style = "yyyy-MM-dd")
+	private LocalDate dataNascimento;
+
+	@Column(nullable = false)
 	private String endereco;
-	
+
 	public String getEndereco() {
 		return endereco;
 	}
@@ -45,6 +52,14 @@ public class CadastroCliente {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public String getEmail() {
@@ -102,6 +117,4 @@ public class CadastroCliente {
 				+ telefone + "]";
 	}
 
-	
-	
 }

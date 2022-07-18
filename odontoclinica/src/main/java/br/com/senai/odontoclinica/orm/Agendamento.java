@@ -1,5 +1,6 @@
 package br.com.senai.odontoclinica.orm;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Agendamento {
@@ -22,6 +25,18 @@ public class Agendamento {
 	@Column(nullable = false)
 	private String telefone;
 	
+	@Column(nullable = false)
+	@DateTimeFormat(style = "yyyy-MM-dd")
+	private LocalDate dataConsulta;
+	
+	
+	
+	public LocalDate getDataConsulta() {
+		return dataConsulta;
+	}
+	public void setDataConsulta(LocalDate dataConsulta) {
+		this.dataConsulta = dataConsulta;
+	}
 	public Integer getId() {
 		return id;
 	}
