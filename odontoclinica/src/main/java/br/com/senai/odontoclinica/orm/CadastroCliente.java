@@ -11,13 +11,15 @@ import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 
 public class CadastroCliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	private Integer id;
+	private Long id;
 
 	@Column(nullable = false)
 	private String nome;
@@ -26,7 +28,7 @@ public class CadastroCliente {
 	private String cpf;
 
 	@Column(nullable = false)
-	@DateTimeFormat(style = "yyyy-MM-dd")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
 
 	@Column(nullable = false)
@@ -95,11 +97,11 @@ public class CadastroCliente {
 		this.telefone = telefone;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

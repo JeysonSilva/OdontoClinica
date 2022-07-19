@@ -17,7 +17,7 @@ public class Agendamento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private Integer id;
+	private Long id;
 	
 	@Column(nullable = false)
 	private String nome;
@@ -29,18 +29,17 @@ public class Agendamento {
 	@DateTimeFormat(style = "yyyy-MM-dd")
 	private LocalDate dataConsulta;
 	
-	
-	
+		
 	public LocalDate getDataConsulta() {
 		return dataConsulta;
 	}
 	public void setDataConsulta(LocalDate dataConsulta) {
 		this.dataConsulta = dataConsulta;
 	}
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {
