@@ -11,6 +11,8 @@ import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Agendamento {
 
@@ -26,7 +28,7 @@ public class Agendamento {
 	private String telefone;
 	
 	@Column(nullable = false)
-	@DateTimeFormat(style = "yyyy-MM-dd")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataConsulta;
 	
 		
