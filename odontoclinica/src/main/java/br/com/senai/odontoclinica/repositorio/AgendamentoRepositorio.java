@@ -1,11 +1,11 @@
 package br.com.senai.odontoclinica.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
 import br.com.senai.odontoclinica.orm.Agendamento;
 
-@RepositoryRestResource(collectionResourceRel = "agendamento", path = "agendamento")
-public interface AgendamentoRepositorio extends JpaRepository<Agendamento, Integer> {
+@Repository
+public interface AgendamentoRepositorio extends JpaRepository<Agendamento, Long> {
 
 }
