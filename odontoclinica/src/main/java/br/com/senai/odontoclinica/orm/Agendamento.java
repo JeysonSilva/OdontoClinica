@@ -8,9 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
@@ -31,7 +28,15 @@ public class Agendamento {
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataConsulta;
 	
+	@Column(nullable = false)
+	private LocalDate dataHorario;
 		
+	public LocalDate getDataHorario() {
+		return dataHorario;
+	}
+	public void setDataHorario(LocalDate dataHorario) {
+		this.dataHorario = dataHorario;
+	}
 	public LocalDate getDataConsulta() {
 		return dataConsulta;
 	}
