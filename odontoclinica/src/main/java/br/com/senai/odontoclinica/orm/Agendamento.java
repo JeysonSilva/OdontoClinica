@@ -1,6 +1,7 @@
 package br.com.senai.odontoclinica.orm;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -29,12 +30,13 @@ public class Agendamento {
 	private LocalDate dataConsulta;
 	
 	@Column(nullable = false)
-	private LocalDate dataHorario;
+	@JsonFormat(pattern = "hh:mm")
+	private LocalTime dataHorario;
 		
-	public LocalDate getDataHorario() {
+	public LocalTime getDataHorario() {
 		return dataHorario;
 	}
-	public void setDataHorario(LocalDate dataHorario) {
+	public void setDataHorario(LocalTime dataHorario) {
 		this.dataHorario = dataHorario;
 	}
 	public LocalDate getDataConsulta() {

@@ -12,22 +12,22 @@
 		<h3>Cadastro Agendar</h3>
 
 	</div>
-	<form action="http://localhost:8080/agendamento">
+	<form action="http://localhost:8080/agendamento"method="post">
 
 		<label>Nome: </label>
-		<input type="text" name="nome" size="40" required>
+		<input placeholder="Nome" type="text" name="nome" size="40" required>
 		<br>
 		<br> 
 		<label>telefone: </label>
-		<input type="text" name="telefone" size="40"	required>
+		<input placeholder="Telefone" type="text" name="telefone" size="40"	required>
 		<br>
 		<br>
-		<label>Data Nascimento:</label>	
-		<input type="text" name="dataConsulta" size="40" required>
+		<label>Data Consulta:</label>	
+		<input placeholder="Data Consulta" type="text" name="dataConsulta" size="40" required>
 		<br>
 		<br> 
 		<label>Horario: </label>
-		<input type="text" name="dataHorario"size="40" required>
+		<input pattern="\d(2):\d(2)" placeholder="Exemplo: 10:25" type="text" name="dataHorario"size="40" required>
 		<br>
 	    <br>
 		

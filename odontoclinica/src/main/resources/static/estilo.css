@@ -18,23 +18,31 @@ body{
 	overflow: auto;
 	margin: 5px;
 	color: white;
+	display: flex;
 }
 
 #menu{
+	
 	width: 220px;
-	float: right;
+	text-indent: 15px;
 	background-color: rgb(0, 128, 255);
 	color: white;
 	padding: 5px;
 	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	height:100%;
 }
-
+.link{
+	color:white;
+}
 #conteudo{
-	
+	justify-content: center;
 	padding: 5px;
 	border-radius: 12px;
-	width: 1080px;
-	float: left;
+	width: 100%;
+	display: flex;
+	
 }
 
 #rodape{

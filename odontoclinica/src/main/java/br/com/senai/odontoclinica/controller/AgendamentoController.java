@@ -2,6 +2,7 @@ package br.com.senai.odontoclinica.controller;
 
 import java.util.List;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +25,8 @@ public class AgendamentoController {
 		this.agendamentoService = agendamentoService;
 	}
 	
-	@PostMapping
-	public Long agendar(@RequestBody Agendamento request) {
+	@PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public Long agendar(Agendamento request) {
 		return agendamentoService.agendar(request);		
 	}
 	

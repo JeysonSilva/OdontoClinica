@@ -11,34 +11,34 @@
 		<h3>Cadastro Cliente</h3>
 
 	</div>
-	<form action="http://localhost:8080/cadastrocliente">
+	<form action="http://localhost:8080/cadastrocliente" method="post">
 
 		<label>Nome: </label>
-		<input type="text" name="nome" size="40" required>
+		<input placeholder="Nome" type="text" name="nome" size="40" required>
 		<br>
 		<br> 
 		<label>Cpf: </label>
-		<input type="text" name="cpf" size="40"	required>
+		<input placeholder="Cpf" type="text" name="cpf" size="40"	required>
 		<br>
 		<br>
 		<label>Data Nascimento:</label>	
-		<input type="text" name="dataNascimento" size="40" required>
+		<input placeholder="Data Nascimento" type="text" name="dataNascimento" size="40" required>
 		<br>
 		<br> 
 		<label>Endereço: </label>
-		<input type="text" name="endereco"size="40" required>
+		<input placeholder="Endereço" type="text" name="endereco"size="40" required>
 		<br>
 	    <br>
 		<label>Email:	</label>
-		<input type="text" name="email" size="40" required>
+		<input placeholder="Email" type="text" name="email" size="40" required>
 		<br> <br>
 		<label>Telefone: </label>
-		<input type="text" name="telefone" size="40"required>
+		<input placeholder="Telefone" type="text" name="telefone" size="40"required>
 		<br> 
 		<br> 
 		<input type="submit"value="Gravar">
-		
-		<input type="button" value="Voltar">
+					
+		<input onclick="location.href='./cadastro.html'"type="button" value="Voltar">
 	</form>
 </body>
 </html>

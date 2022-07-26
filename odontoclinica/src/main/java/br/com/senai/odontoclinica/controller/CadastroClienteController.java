@@ -2,6 +2,7 @@ package br.com.senai.odontoclinica.controller;
 
 import java.util.List;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senai.odontoclinica.orm.CadastroCliente;
@@ -24,8 +26,8 @@ public class CadastroClienteController {
 		this.cadastroClienteService = cadastroClienteService;
 	}
 
-	@PostMapping
-	public Long cadastrar(@RequestBody CadastroCliente request) {
+	@PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+	public Long cadastrar(CadastroCliente request) {
 		return cadastroClienteService.cadastrar(request);
 	}
 	
