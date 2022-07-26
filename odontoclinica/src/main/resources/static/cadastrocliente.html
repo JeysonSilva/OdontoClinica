@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cadastro Cliente</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+	<div id="topo">
+
+		<h3>Cadastro Cliente</h3>
+
+	</div>
+	<form action="http://localhost:8080/cadastrocliente">
+
+		<label>Nome: </label>
+		<input type="text" name="nome" size="40" required>
+		<br>
+		<br> 
+		<label>Cpf: </label>
+		<input type="text" name="cpf" size="40"	required>
+		<br>
+		<br>
+		<label>Data Nascimento:</label>	
+		<input type="text" name="dataNascimento" size="40" required>
+		<br>
+		<br> 
+		<label>Endereço: </label>
+		<input type="text" name="endereco"size="40" required>
+		<br>
+	    <br>
+		<label>Email:	</label>
+		<input type="text" name="email" size="40" required>
+		<br> <br>
+		<label>Telefone: </label>
+		<input type="text" name="telefone" size="40"required>
+		<br> 
+		<br> 
+		<input type="submit"value="Gravar">
+		
+		<input type="button" value="Voltar">
+	</form>
+</body>
+</html>

@@ -2,35 +2,39 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Alterar Agendamento</title>
+<title>Cadastrar Agendamento</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-	<div id="topo">
+<div id="topo">
 
-		<h3>Alterar Agendamento</h3>
+
+		<h3>Cadastro Agendar</h3>
 
 	</div>
-	<form>
+	<form action="http://localhost:8080/agendamento">
+
 		<label>Nome: </label>
 		<input type="text" name="nome" size="40" required>
 		<br>
 		<br> 
 		<label>telefone: </label>
-		<input type="text" name="telefone"size="40" required>
+		<input type="text" name="telefone" size="40"	required>
 		<br>
-		<br> 
-		<label>Data	Consulta: 
-		</label>
-		<input type="text" name="dataCosulta" size="40" required>
+		<br>
+		<label>Data Nascimento:</label>	
+		<input type="text" name="dataConsulta" size="40" required>
 		<br>
 		<br> 
 		<label>Horario: </label>
-		<input type="text" name="horario"size="40" required>
-		<br> 
-		<br> 
+		<input type="text" name="dataHorario"size="40" required>
+		<br>
+	    <br>
+		
 		<input type="submit"value="Gravar">
+		
 		<input type="button" value="Voltar">
 	</form>
+
 </body>
 </html>
