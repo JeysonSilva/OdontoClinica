@@ -14,22 +14,23 @@
 	</div>
 	<form action="http://localhost:8080/agendamento"method="post">
 
-		<label>Nome: </label>
-		<input placeholder="Nome" type="text" name="nome" size="40" required>
-		<br>
-		<br> 
-		<label>telefone: </label>
-		<input placeholder="Telefone" type="text" name="telefone" size="40"	required>
-		<br>
-		<br>
-		<label>Data Consulta:</label>	
-		<input placeholder="Data Consulta" type="text" name="dataConsulta" size="40" required>
-		<br>
-		<br> 
-		<label>Horario: </label>
-		<input pattern="\d(2):\d(2)" placeholder="Exemplo: 10:25" type="text" name="dataHorario"size="40" required>
-		<br>
-	    <br>
+		<div>
+			<p>Nome:</p>
+			<input placeholder="Digite seu nome" size="40" />
+		</div>
+		<div>
+			<p>Telefone:</p>
+			<input placeholder="Digite seu telefone" size="40" />
+		</div>
+		<div>
+			<p>Data Consulta:</p>
+			<input placeholder="Digite sua data de consuta (exemplo: 01/01/2000)"
+				size="40" />
+		</div>
+		<div>
+			<p>Horário:</p>
+			<input placeholder="Digite o horario (exemplo: 10:25)" size="40" />
+		</div>
 		
 		<input type="submit"value="Gravar">
 		

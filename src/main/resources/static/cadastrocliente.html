@@ -13,32 +13,34 @@
 	</div>
 	<form action="http://localhost:8080/cadastrocliente" method="post">
 
-		<label>Nome: </label>
-		<input placeholder="Nome" type="text" name="nome" size="40" required>
-		<br>
-		<br> 
-		<label>Cpf: </label>
-		<input placeholder="Cpf" type="text" name="cpf" size="40"	required>
-		<br>
-		<br>
-		<label>Data Nascimento:</label>	
-		<input placeholder="Data Nascimento" type="text" name="dataNascimento" size="40" required>
-		<br>
-		<br> 
-		<label>Endereço: </label>
-		<input placeholder="Endereço" type="text" name="endereco"size="40" required>
-		<br>
-	    <br>
-		<label>Email:	</label>
-		<input placeholder="Email" type="text" name="email" size="40" required>
-		<br> <br>
-		<label>Telefone: </label>
-		<input placeholder="Telefone" type="text" name="telefone" size="40"required>
-		<br> 
-		<br> 
-		<input type="submit"value="Gravar">
-					
-		<input onclick="location.href='./cadastro.html'"type="button" value="Voltar">
+		<div>
+			<p>Nome:</p>
+			<input placeholder="Digite seu nome" size="40" />
+		</div>
+		<div>
+			<p>CPF:</p>
+			<input placeholder="Digite seu cpf" size="40" />
+		</div>
+		<div>
+			<p>Data Nascimento:</p>
+			<input placeholder="Digite seu data nascimento exemplo: 01/01/2000"
+				size="40" />
+		</div>
+		<div>
+			<p>Endereço:</p>
+			<input placeholder="Digite seu endereço" size="40" />
+		</div>
+		<div>
+			<p>Email:</p>
+			<input placeholder="Digite seu email exemplo: a@gmail.com" size="40" />
+		</div>
+		<div>
+			<p>Telefone:</p>
+			<input placeholder="Digite seu telefone" size="40" />
+		</div>
+		<input type="submit" value="Gravar"> <input
+			onclick="location.href='./cadastro.html'" type="button"
+			value="Voltar">
 	</form>
 </body>
 </html>

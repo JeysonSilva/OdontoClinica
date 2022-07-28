@@ -30,17 +30,17 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="cadastrocliente : ${listaCadastroCliente}">
-						<td th:text="${cadastrocliente.nome}"></td>
-						<td th:text="${cadastrocliente.cpf}"></td>
-						<td th:text="${cadastrocliente.dataNascimento}"></td>
-						<td th:text="${cadastrocliente.endereco}"></td>
-						<td th:text="${cadastrocliente.email}"></td>
-						<td th:text="${cadastrocliente.telefone}"></td>
+					<tr th:each="CadastroCliente : ${listaCadastroCliente}">
+						<td th:text="${cadastroCliente.nome}"></td>
+						<td th:text="${cadastroCliente.cpf}"></td>
+						<td th:text="${cadastroCliente.dataNascimento}"></td>
+						<td th:text="${cadastroCliente.endereco}"></td>
+						<td th:text="${cadastroCliente.email}"></td>
+						<td th:text="${cadastroCliente.telefone}"></td>
 
-						<td><a th:href="@{/rh/produtos/{id}(id=${produto.id})}"
+						<td><a th:href="@{/static/cadastro/{id}(id=${cadastroCliente.id})}"
 							class="btn btn-primary">Alterar</a> <a
-							th:href="@{/rh/produtos/excluir/{id}(id=${produto.id})}"
+							th:href="@{/static/cadastro/excluir/{id}(id=${cadastroCliente.id})}"
 							class="btn btn-danger">Excluir</a></td>
 					</tr>
 				</tbody>
