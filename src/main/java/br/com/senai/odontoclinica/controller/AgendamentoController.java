@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senai.odontoclinica.orm.Agendamento;
-import br.com.senai.odontoclinica.sevices.AgendamentoService;
+import br.com.senai.odontoclinica.sevices.AgendamentoServiceCRUD;
 
 @RestController
 
-@RequestMapping("/agendamento")
+@RequestMapping("/cadastroagendamendo")
 public class AgendamentoController {
 
-	final AgendamentoService agendamentoService;
+	final AgendamentoServiceCRUD agendamentoService;
 
-	public AgendamentoController(AgendamentoService agendamentoService) {
+	public AgendamentoController(AgendamentoServiceCRUD agendamentoService) {
 		this.agendamentoService = agendamentoService;
 	}
 	
@@ -30,7 +30,7 @@ public class AgendamentoController {
 		return agendamentoService.agendar(request);		
 	}
 	
-	@GetMapping
+	@GetMapping("/cadastroagendamendo")
 	public List<Agendamento> listarAgendamento(){
 		return agendamentoService.listarAgendamento();
 	}

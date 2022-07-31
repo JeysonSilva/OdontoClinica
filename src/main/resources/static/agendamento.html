@@ -2,51 +2,40 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Agendamento</title>
+<title>Cadastrar Agendamento</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
 <div id="topo">
 
-		<p><a class="link" href="./cadastroagendamento.html">Agendar</a></p>
-		<p><a class="link" href="./index.html">Voltar</a></p>
+
+		<h3>Cadastro Agendar</h3>
 
 	</div>
+	<form action="http://localhost:8080/agendamento"method="post">
 
-	<div id="conteudo">
-
-		<div class="container my-2">
-
-			<h1>Lista de Agendamento</h1>
-			<table border="1" class="table table-striped table-responsive-md">
-				<thead>
-					<tr>
-						<th>Nome</th>
-						<th>telefone</th>
-						<th>Data Consulta</th>
-						<th>Horario</th>
-						<th>Ações</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="cadastrocliente : ${listaCadastroCliente}">
-						<td th:text="${cadastrocliente.nome}"></td>
-						<td th:text="${cadastrocliente.telefone}"></td>
-						<td th:text="${cadastrocliente.dataConsulta}"></td>
-						<td th:text="${cadastrocliente.horario}"></td>
-						
-
-						<td><a th:href="@{/rh/produtos/{id}(id=${produto.id})}"
-							class="btn btn-primary">Alterar</a> <a
-							th:href="@{/rh/produtos/excluir/{id}(id=${produto.id})}"
-							class="btn btn-danger">Excluir</a></td>
-					</tr>
-				</tbody>
-			</table>
-
+		<div>
+			<p>Nome:</p>
+			<input placeholder="Digite seu nome" size="40" />
 		</div>
-	</div>
+		<div>
+			<p>Telefone:</p>
+			<input placeholder="Digite seu telefone" size="40" />
+		</div>
+		<div>
+			<p>Data Consulta:</p>
+			<input placeholder="Digite sua data de consuta (exemplo: 01/01/2000)"
+				size="40" />
+		</div>
+		<div>
+			<p>Horário:</p>
+			<input placeholder="Digite o horario (exemplo: 10:25)" size="40" />
+		</div>
+		
+		<input type="submit"value="Gravar">
+		
+		<input onclick="location.href='./agendamento.html'"type="button" value="Voltar">
+	</form>
 
 </body>
 </html>
