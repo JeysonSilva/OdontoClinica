@@ -1,50 +1,65 @@
 package br.com.senai.odontoclinica.controller;
 
-import java.util.List;
-
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senai.odontoclinica.orm.Agendamento;
-import br.com.senai.odontoclinica.sevices.AgendamentoServiceCRUD;
 
-@RestController
+import br.com.senai.odontoclinica.sevices.AgendamentoService;
 
-@RequestMapping("/cadastroagendamendo")
+@Controller
+
 public class AgendamentoController {
 
-	final AgendamentoServiceCRUD agendamentoService;
+	@Autowired
+	private AgendamentoService servico;
 
-	public AgendamentoController(AgendamentoServiceCRUD agendamentoService) {
-		this.agendamentoService = agendamentoService;
+	@GetMapping({"/cadastroagendamento"})
+	public String listarAgendamento(Model modelo) {
+		modelo.addAttribute("cadastroagendamento", servico.listarAgendamento());
+		return "cadastroagendamento";
 	}
-	
-	@PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public Long agendar(Agendamento request) {
-		return agendamentoService.agendar(request);		
+
+	@GetMapping({ "/cadastroagendamento/{id}" })
+	public String apagarAgendamento(@PathVariable Long id) {
+		servico.apagarAgendamento(id);
+		return "redirect:/cadastroagendamento";
 	}
-	
-	@GetMapping("/cadastroagendamendo")
-	public List<Agendamento> listarAgendamento(){
-		return agendamentoService.listarAgendamento();
+
+	@GetMapping("/cadastroagendamento/adicionar")
+	public String adicionarAgendamento(Model modelo) {
+		Agendamento agendamento = new Agendamento();
+		modelo.addAttribute("cadastroagendamento", agendamento);
+		return "agendamento";
 	}
-	@GetMapping("/{id}")
-	public Agendamento buscarAgedamentoPorId(@PathVariable Long id) {
-		return agendamentoService.buscarAgendamentoPorId(id);
+
+	@PostMapping("/cadastroagendamento")
+	public String salvarAgendamento(@ModelAttribute("cadastroagendamento") Agendamento agendamento) {
+		servico.salvarAgendamento(agendamento);
+		return "redirect:/cadastroagendamento";
 	}
-	@DeleteMapping("/{id}")
-	public void deletarAgendamento(@PathVariable Long id) {
-		agendamentoService.deletarAgendamento(id);
+
+	@GetMapping({ "/cadastroagendamento/editar/{id}" })
+	public String editarAgendamento(@PathVariable Long id, Model modelo) {
+		modelo.addAttribute("cadastroagendamento", servico.consultarAgendamentoId(id));
+		return "alteraragendamento";
 	}
-	
-	public Agendamento alterarAgendamento(@RequestBody Agendamento request) {
-		return agendamentoService.alterarAgendamento(request);
-		
+
+	@PostMapping("/cadastroagendamento/{id}")
+	public String atualizarAgendamento(@PathVariable Long id,@ModelAttribute("cadastroagendamento") Agendamento agendamento, Model modelo) {
+		Agendamento cat = servico.consultarAgendamentoId(id);
+		cat.setId(id);
+		cat.setNome(agendamento.getNome());
+		cat.setTelefone(agendamento.getTelefone());
+		cat.setDataConsulta(agendamento.getDataConsulta());
+		cat.setDataHorario(agendamento.getDataHorario());
+
+		servico.atualizarAgendamento(cat);
+		return "redirect:/cadastroagendamento";
 	}
 }

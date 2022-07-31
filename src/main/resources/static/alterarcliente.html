@@ -41,7 +41,7 @@
 	<div class="container-fluid">
 		<h2 style="text-align: center;">Editar dados do Clientes</h2>
 		<div class="jumbotron" style="width: 800px; margin: 0 auto;">
-			<form th:action="@{/cadastrocliente/{id}(id=${categoria.id})}" th:object="${cadastrocliente}"
+			<form th:action="@{/cadastrocliente/{id}(id=${cadastrocliente.id})}" th:object="${cadastrocliente}"
 				method="post">
 				<div class="form-group">
 					<label>Nome</label> <input type="text" name="nome"

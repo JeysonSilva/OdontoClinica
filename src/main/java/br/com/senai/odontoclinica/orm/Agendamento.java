@@ -30,9 +30,8 @@ public class Agendamento {
 	private LocalDate dataConsulta;
 	
 	@Column(nullable = false)
-	@JsonFormat(pattern = "hh:mm")
 	private LocalTime dataHorario;
-		
+	@JsonFormat(pattern = "hh:mm")	
 	public LocalTime getDataHorario() {
 		return dataHorario;
 	}

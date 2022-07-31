@@ -39,33 +39,34 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-		<h2 style="text-align: center;">Cadastro de Clientes</h2>
+		<h2 style="text-align: center;">Cadastrar Cliente</h2>
 		<div class="jumbotron" style="width: 800px; margin: 0 auto;">
 			<form th:action="@{/cadastrocliente}" th:object="${cadastrocliente}"
 				method="post">
 				<div class="form-group">
-					<label>Nome</label> <input type="text" name="nome"
+					<label>Nome</label> <input placeholder="Digite seu no completo" type="text" name="nome"
+					
 						th:field="*{nome}" class="form-control" required>
 				</div>
 				<div class="form-group">
-					<label>CPF</label> <input type="text" name="cpf" th:field="*{cpf}"
+					<label>CPF</label> <input placeholder="Digite seu CPF"  type="text" name="cpf" th:field="*{cpf}"
 						class="form-control" required>
 				</div>
 				<div class="form-group">
-					<label>Data Nascimento</label> <input type="text"
+					<label>Data Nascimento</label> <input placeholder="Digite sua data de nascimento (exemplo: 01/01/2000)"  type="text"
 						name="dataNascimento" th:field="*{dataNascimento}"
 						class="form-control" required>
 				</div>
 				<div class="form-group">
-					<label>Endereço</label> <input type="text" name="endereco"
+					<label>Endereço</label> <input placeholder="Digite seu endereço (exemplo: Rua ....)" type="text" name="endereco"
 						th:field="*{endereco}" class="form-control" required>
 				</div>
 				<div class="form-group">
-					<label>Email</label> <input type="text" name="email"
+					<label>Email</label> <input placeholder="Digite seu email (exemplo : a@gmail.com)" type="text" name="email"
 						th:field="*{email}" class="form-control" required>
 				</div>
 				<div class="form-group">
-					<label>Telefone</label> <input type="text" name="telefone"
+					<label>Telefone</label> <input placeholder="Digite seu telefone (exemplo: 987654321)" type="text" name="telefone"
 						th:field="*{telefone}" class="form-control" required>
 				</div>
 

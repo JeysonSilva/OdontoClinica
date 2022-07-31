@@ -1,52 +1,44 @@
 package br.com.senai.odontoclinica.sevices;
 
 import java.util.List;
-import java.util.Optional;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.senai.odontoclinica.orm.Agendamento;
+
 import br.com.senai.odontoclinica.repositorio.AgendamentoRepositorio;
+
 
 @Service
 
-public class AgendamentoServiceCRUD {
+public class AgendamentoServiceCRUD implements AgendamentoService{
 
-	final AgendamentoRepositorio agendamentoRepositorio;
-
-	public AgendamentoServiceCRUD(AgendamentoRepositorio agendamentoRepositorio) {
-		this.agendamentoRepositorio = agendamentoRepositorio;
+	@Autowired
+	private AgendamentoRepositorio repository;
+	
+	public List<Agendamento> listarAgendamento(){
+		return (List<Agendamento>) repository.findAll();
+	}
+	
+	public void apagarAgendamento(Long id) {
+		repository.deleteById(id);
+	}
+	
+	public Agendamento salvarAgendamento(Agendamento agendamento) {
+		return repository.save(agendamento);
+	}
+	
+	public Agendamento consultarAgendamentoId(Long id) {
+		return repository.findById(id).get();
+	}
+	
+	public Agendamento atualizarAgendamento(Agendamento agendamento) {
+		return repository.save(agendamento);
 	}
 
-	public Long agendar(Agendamento request) {
-		Agendamento entity = agendamentoRepositorio.save(request);
-		return entity.getId();
-	}
 
-	public List<Agendamento> listarAgendamento() {
-		return agendamentoRepositorio.findAll();
-		
-	}
-
-	public Agendamento buscarAgendamentoPorId(Long id) {
-		return agendamentoRepositorio.findById(id).orElse(null);
-	}
-
-	public void deletarAgendamento(Long id) {
-		agendamentoRepositorio.deleteById(id);
-	}
-
-	public Agendamento alterarAgendamento(Agendamento request) {
-		Optional<Agendamento> entity = agendamentoRepositorio.findById(request.getId());
-		if (entity.isPresent()) {
-			Agendamento obj = entity.get();
-			obj.setNome(request.getNome());
-			obj.setTelefone(request.getTelefone());
-			obj.setDataConsulta(request.getDataConsulta());
-			return agendamentoRepositorio.save(obj);
-		}
-		return null;
-	}
 	
 	
 }
