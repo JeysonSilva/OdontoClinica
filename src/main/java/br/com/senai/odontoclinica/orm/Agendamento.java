@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @Entity
 public class Agendamento {
@@ -26,12 +28,14 @@ public class Agendamento {
 	private String telefone;
 	
 	@Column(nullable = false)
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(shape  = Shape.STRING, pattern = "dd/MM/yyyy")
 	private LocalDate dataConsulta;
 	
 	@Column(nullable = false)
+	@JsonFormat(shape = Shape.STRING, pattern = "hh:mm")
 	private LocalTime dataHorario;
-	@JsonFormat(pattern = "hh:mm")	
+	
+	
 	public LocalTime getDataHorario() {
 		return dataHorario;
 	}

@@ -15,10 +15,10 @@ import br.com.senai.odontoclinica.sevices.AgendamentoService;
 @Controller
 
 public class AgendamentoController {
-
+	
 	@Autowired
 	private AgendamentoService servico;
-
+	
 	@GetMapping({"/cadastroagendamento"})
 	public String listarAgendamento(Model modelo) {
 		modelo.addAttribute("cadastroagendamento", servico.listarAgendamento());
@@ -34,7 +34,7 @@ public class AgendamentoController {
 	@GetMapping("/cadastroagendamento/adicionar")
 	public String adicionarAgendamento(Model modelo) {
 		Agendamento agendamento = new Agendamento();
-		modelo.addAttribute("cadastroagendamento", agendamento);
+		modelo.addAttribute("agendamento", agendamento);
 		return "agendamento";
 	}
 
@@ -46,7 +46,7 @@ public class AgendamentoController {
 
 	@GetMapping({ "/cadastroagendamento/editar/{id}" })
 	public String editarAgendamento(@PathVariable Long id, Model modelo) {
-		modelo.addAttribute("cadastroagendamento", servico.consultarAgendamentoId(id));
+		modelo.addAttribute("agendamento", servico.consultarAgendamentoId(id));
 		return "alteraragendamento";
 	}
 

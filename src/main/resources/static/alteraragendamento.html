@@ -21,7 +21,7 @@
 						data-target="#bs-example-navbar-collapse-1">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<a class="navbar-brand" th:href="@{../index.html}">Odonto
+					<a class="navbar-brand" th:href="@{../../index.html}">Odonto
 						Clinica</a>
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
@@ -30,7 +30,7 @@
 							data-target="#bs-example-navbar-collapse-1">
 							<span class="navbar-toggler-icon"></span>
 						</button>
-						<a class="navbar-brand" th:href="@{../cadastrocliente}">Voltar</a>
+						<a class="navbar-brand" th:href="@{../../cadastroagendamento}">Voltar</a>
 
 						
 					</div>
@@ -41,7 +41,7 @@
 	<div class="container-fluid">
 		<h2 style="text-align: center;">Editar dados do Clientes</h2>
 		<div class="jumbotron" style="width: 800px; margin: 0 auto;">
-			<form th:action="@{/cadastroagendamento/{id}(id=${cadastroagendamento.id})}" th:object="${cadastroagendamento}"
+			<form th:action="@{/cadastroagendamento/{id}(id=${agendamento.id})}" th:object="${agendamento}"
 				method="post">
 				<div class="form-group">
 					<label>Nome</label> <input type="text" name="nome"
@@ -60,7 +60,7 @@
 				</div>
 				<div class="form-group">
 					<label>Horário</label> <input type="text"
-						name="dataHorario" th:field="*{datahorario}"
+						name="dataHorario" th:field="*{dataHorario}"
 						class="form-control" required>
 						
 				</div>
